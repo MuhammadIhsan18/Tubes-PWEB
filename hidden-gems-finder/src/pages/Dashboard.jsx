@@ -208,10 +208,6 @@ export default function Dashboard() {
                 <Search size={16} color="var(--text-muted)" />
                 <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Cari destinasi..." style={s.searchInput} />
               </div>
-              <div className="glass-panel" style={s.notifBtn}>
-                <Bell size={17} color="var(--text-muted)" />
-                <div style={s.notifDot} />
-              </div>
               <div style={s.topAvatar}>{currentUser.name.charAt(0).toUpperCase()}</div>
             </div>
           )}

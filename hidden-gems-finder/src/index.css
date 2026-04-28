@@ -225,6 +225,205 @@ input::placeholder {
   100% { transform: scale(1.15) translate(1%, -1.5%); }
 }
 
+/* Feature Grid - Bento Style */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 200px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 100px auto;
+  width: 90%;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card-large {
+  grid-column: span 8;
+  grid-row: span 2;
+}
+
+.feature-card-medium {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.feature-card-small {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.feature-card-wide {
+  grid-column: span 8;
+  grid-row: span 1;
+}
+
+.feature-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  opacity: 0.2;
+  transform: scale(2);
+  transition: all 0.6s ease;
+}
+
+.feature-card:hover .feature-icon {
+  opacity: 0.8;
+  transform: scale(2.2) rotate(10deg);
+  color: var(--accent-emerald);
+}
+
+.feature-content h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.feature-content p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Floating Elements Layer */
+.floating-elements-container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 0;
+  perspective: 1000px;
+}
+
+.main-visual {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, var(--accent-emerald) 0%, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.3;
+  position: absolute;
+  animation: pulseGlow 4s infinite alternate;
+}
+
+.floating-layer {
+  position: absolute;
+  padding: 20px 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.5s ease;
+}
+
+.layer-1 { top: 10%; left: 15%; animation: float 10s infinite; }
+.layer-2 { top: 20%; right: 10%; animation: float 12s infinite reverse; }
+.layer-3 { bottom: 15%; left: 20%; animation: float 14s infinite; }
+.layer-4 { bottom: 10%; right: 15%; animation: float 8s infinite reverse; }
+
+.floating-layer:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-emerald);
+  transform: translateZ(50px) scale(1.1);
+}
+
+/* Trending Marquee */
+.marquee-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(245, 158, 11, 0.1);
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 50px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Global Background Embers */
+.particles-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ember {
+  position: absolute;
+  background: var(--accent-emerald);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  box-shadow: 0 0 15px var(--accent-emerald);
+  opacity: 0;
+  animation: emberGlobalRise var(--d) linear infinite;
+  animation-delay: var(--delay);
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+}
+
+@keyframes emberGlobalRise {
+  0% { transform: translateY(110vh) scale(1); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+}
+
+/* Footer */
+.footer {
+  padding: 80px 0 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 100px;
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Even slower */
   opacity: 0; 
