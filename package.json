@@ -2,25 +2,22 @@
   "name": "hidden-gems-finder",
   "version": "0.1.0",
   "private": true,
-
   "homepage": "https://muhammadihsan18.github.io/Tubes_PWEB",
-
   "dependencies": {
     "lucide-react": "^1.8.0",
-    "react-router-dom": "^7.14.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^7.14.2",
     "react-scripts": "^5.0.1"
   },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.3.0",
+    "install": "^0.13.0"
   }
 }
