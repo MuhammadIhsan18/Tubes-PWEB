@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Tubes-PWEB/static/css/main.5e2baa35.css",
+    "main.js": "/Tubes-PWEB/static/js/main.f7f17776.js",
+    "static/js/453.92f6291a.chunk.js": "/Tubes-PWEB/static/js/453.92f6291a.chunk.js",
+    "index.html": "/Tubes-PWEB/index.html",
+    "main.5e2baa35.css.map": "/Tubes-PWEB/static/css/main.5e2baa35.css.map",
+    "main.f7f17776.js.map": "/Tubes-PWEB/static/js/main.f7f17776.js.map",
+    "453.92f6291a.chunk.js.map": "/Tubes-PWEB/static/js/453.92f6291a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e2baa35.css",
+    "static/js/main.f7f17776.js"
+  ]
+}
